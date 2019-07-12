@@ -9,9 +9,9 @@ import java.util.Map;
 public class FirstExample {
     public static void main(String[] args) {
 
-        WebDriver webDriver = DriverManager.getInstance().getWebDriver();
+        WebDriver webDriver = WebDriverManager.getInstance().getWebDriver();
         webDriver.get(PropertyAccesor.getInstance().getURL());
-        webDriver.quit();
+        //webDriver.quit();
     }
 
     public static void exampleMap(){
