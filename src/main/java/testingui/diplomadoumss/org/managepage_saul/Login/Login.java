@@ -1,17 +1,12 @@
-package testingui.diplomadoumss.org.managepage.login;
+package testingui.diplomadoumss.org.managepage_saul.Login;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import testingui.diplomadoumss.org.managepage.BasePage;
+import testingui.diplomadoumss.org.managepage_saul.BasePageSaul;
 
-/**
- * @author Marcelo Garay, saul mamani
- * @project testingui.diplomadoumss.org
- */
-public class Login extends BasePage {
-
+public class Login extends BasePageSaul {
     @FindBy(xpath = "//input[@name='email' and @type='text']")
-    private WebElement emailTextField;
+    private WebElement usernameTextField;
 
     @FindBy(xpath = "//input[@name='password' and @type='password']")
     private WebElement passwordTextField;
@@ -20,7 +15,7 @@ public class Login extends BasePage {
     private WebElement buttonSubmit;
 
     public void setEmail(String email){
-        emailTextField.sendKeys(email);
+        usernameTextField.sendKeys(email);
     }
 
     public void setPassword(String password){

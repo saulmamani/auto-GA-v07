@@ -24,15 +24,4 @@ public class DriverFactory {
 
         return browserSettings.get(broserType);
     }
-
-    public Browser getBrowser2(String name){
-        if(name.equalsIgnoreCase("CHROME")){
-            return new Chrome();
-        }
-        if(name.equalsIgnoreCase("FIREFOX")){
-            return new Firefox();
-        }else{
-            return new Chrome();
-        }
-    }
 }

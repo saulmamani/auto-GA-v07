@@ -6,20 +6,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/**
- * @author Marcelo Garay
- * @project testingui.diplomadoumss.org
- */
-public class PropertyAccesor {
-    private static PropertyAccesor ourInstance = new PropertyAccesor();
+public class PropertyAccesorSaul {
+    private static PropertyAccesorSaul ourInstance = new PropertyAccesorSaul();
     private Properties prop;
 
-    public static PropertyAccesor getInstance() {
+    public static PropertyAccesorSaul getInstance() {
         return ourInstance;
     }
 
-    private PropertyAccesor() {
-        try (InputStream input = new FileInputStream("gradle.properties")) {
+    private PropertyAccesorSaul() {
+        try (InputStream input = new FileInputStream("gradle_saul.properties")) {
             prop = new Properties();
             prop.load(input);
         } catch (FileNotFoundException e) {
@@ -46,6 +42,8 @@ public class PropertyAccesor {
     }
 
     public static void main(String[] args) {
-        System.out.println(PropertyAccesor.getInstance().getPassword());
+        System.out.println(PropertyAccesorSaul.getInstance().getURL());
+        System.out.println(PropertyAccesorSaul.getInstance().getUserName());
+        System.out.println(PropertyAccesorSaul.getInstance().getPassword());
     }
 }
