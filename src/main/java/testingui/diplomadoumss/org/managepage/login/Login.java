@@ -3,6 +3,7 @@ package testingui.diplomadoumss.org.managepage.login;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.managepage.BasePage;
+import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
 /**
  * @author Marcelo Garay, saul mamani
@@ -11,7 +12,7 @@ import testingui.diplomadoumss.org.managepage.BasePage;
 public class Login extends BasePage {
 
     @FindBy(xpath = "//input[@name='email' and @type='text']")
-    private WebElement emailTextField;
+    public WebElement emailTextField;
 
     @FindBy(xpath = "//input[@name='password' and @type='password']")
     private WebElement passwordTextField;
@@ -27,9 +28,17 @@ public class Login extends BasePage {
         passwordTextField.sendKeys(password);
     }
 
+    public void pressButton()
+    {
+        buttonSubmit.click();
+    }
+
     public void inicializateWeb()
     {
-        //webDriver.get(PropertyAccesor.getInstance().getURL());
-        buttonSubmit.click();
+        webDriver.get(PropertyAccesor.getInstance().getURL());
+    }
+
+    public void finishWeb() {
+        webDriver.quit();
     }
 }
