@@ -17,6 +17,7 @@ dependencies {
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
 
+    compile group: 'io.cucumber', name: 'cucumber-java', version: '2.0.0'
 }
 
 task tarea1(){
