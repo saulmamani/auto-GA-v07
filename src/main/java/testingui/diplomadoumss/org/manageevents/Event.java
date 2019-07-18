@@ -2,7 +2,7 @@ package testingui.diplomadoumss.org.manageevents;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import testingui.diplomadoumss.org.core.DriverManager;
+import testingui.diplomadoumss.org.core.WebDriverManager;
 
 /**
  * @author Marcelo Garay
@@ -21,11 +21,11 @@ public class Event {
     }
 
     public static void isWebElementVisible(WebElement element){
-        DriverManager.getInstance().getWebDriverWait().until(ExpectedConditions.visibilityOf(element));
+        WebDriverManager.getInstance().getWebDriverWait().until(ExpectedConditions.visibilityOf(element));
     }
 
     public static void isWebElementClickable(WebElement element){
-        DriverManager.getInstance().getWebDriverWait().until(ExpectedConditions.elementToBeClickable(element));
+        WebDriverManager.getInstance().getWebDriverWait().until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public static void avoidToUse(int seconds){

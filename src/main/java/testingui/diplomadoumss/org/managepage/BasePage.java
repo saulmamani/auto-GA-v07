@@ -2,7 +2,7 @@ package testingui.diplomadoumss.org.managepage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import testingui.diplomadoumss.org.core.DriverManager;
+import testingui.diplomadoumss.org.core.WebDriverManager;
 
 /**
  * @author Marcelo Garay
@@ -12,7 +12,7 @@ public class BasePage {
     protected WebDriver webDriver;
 
     public BasePage() {
-        this.webDriver = DriverManager.getInstance().getWebDriver();
+        this.webDriver = WebDriverManager.getInstance().getWebDriver();
         PageFactory.initElements(webDriver, this);
     }
 }
