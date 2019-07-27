@@ -49,4 +49,8 @@ public class Dashboard extends BasePage {
     public Suppliers openPageSuppliers() {
         return clickAccountsExpand().clickSuppliersMenu();
     }
+
+    public void clickLogOut() {
+
+    }
 }
