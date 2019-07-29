@@ -25,6 +25,12 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//a[@href='https://www.phptravels.net/admin-portal/admin/accounts/suppliers/']")
     private WebElement suppliersMenu;
 
+    //TODO refactorizar el path real
+    @FindBy(xpath="//button[@type='button']")
+    private WebElement logoutButton;
+
+
+
     public Dashboard() {
 //        isWebElementVisible(bookingLink);
         avoidToUse(5);
@@ -50,7 +56,8 @@ public class Dashboard extends BasePage {
         return clickAccountsExpand().clickSuppliersMenu();
     }
 
-    public void clickLogOut() {
-
+    public Dashboard clickLogOut() {
+        clickWebElement(logoutButton);
+        return this;
     }
 }
