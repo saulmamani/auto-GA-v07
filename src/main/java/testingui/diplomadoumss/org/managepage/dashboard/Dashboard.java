@@ -22,7 +22,7 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//ul[@id='social-sidebar-menu']//a[contains(., 'Accounts') and @aria-expanded='false']")
     private WebElement accountsExpand;
 
-    @FindBy(xpath = "//a[@href='https://www.phptravels.net/admin-portal/admin/accounts/suppliers/']")
+    @FindBy(xpath = "//a[@href='https://www.phptravels.net/admin/accounts/suppliers/']")
     private WebElement suppliersMenu;
 
     //TODO refactorizar el path real

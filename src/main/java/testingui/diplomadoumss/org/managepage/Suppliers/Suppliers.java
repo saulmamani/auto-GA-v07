@@ -2,7 +2,6 @@ package testingui.diplomadoumss.org.managepage.Suppliers;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import sun.util.resources.provider.SupplementaryLocaleDataProvider;
 import testingui.diplomadoumss.org.managepage.BasePage;
 
 import static testingui.diplomadoumss.org.manageevents.Event.avoidToUse;
@@ -12,25 +11,32 @@ public class Suppliers extends BasePage {
     @FindBy(xpath = "//a[@data-task='print']")
     private WebElement printButton;
 
+    @FindBy(xpath = "//a[@data-task='csv']")
+    private WebElement printButtonExport;
+
     //TODO xpath real
-    @FindBy(xpath = "//a[@data-task='ALL']")
+    @FindBy(xpath = "//button[@data-limit='all']")
     private WebElement allButton;
 
     //TODO xpath real
-    @FindBy(xpath = "//a[@data-task='SEARCH']")
+    @FindBy(xpath = "//a[@class='xcrud-search-toggle btn btn-default']")
     private WebElement searchButton;
 
     //TODO xpath real
-    @FindBy(xpath = "//a[@data-task='SEARCH']")
+    @FindBy(xpath = "//button[@type='submit']")
     private WebElement addButton;
 
     public Suppliers() {
         avoidToUse(5);
     }
 
-
     public Suppliers clickButtonPrint() {
         clickWebElement(printButton);
+        return this;
+    }
+
+    public Suppliers clickButtonExport() {
+        clickWebElement(printButtonExport);
         return this;
     }
 

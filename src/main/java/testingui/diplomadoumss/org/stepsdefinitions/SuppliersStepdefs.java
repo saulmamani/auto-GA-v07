@@ -36,6 +36,11 @@ public class SuppliersStepdefs {
         suppliers.clickButtonPrint();
     }
 
+    @And("^click in button 'Export' on 'Suppliers'$")
+    public void clickInButtonExportOnSuppliers() {
+        suppliers.clickButtonExport();
+    }
+
     @And("^logout Page$")
     public void logoutPage() {
         dashboard.clickLogOut();
