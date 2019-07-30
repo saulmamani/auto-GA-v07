@@ -2,7 +2,6 @@ package testingui.diplomadoumss.org.managepage.Suppliers;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import sun.util.resources.provider.SupplementaryLocaleDataProvider;
 import testingui.diplomadoumss.org.managepage.BasePage;
 
 import static testingui.diplomadoumss.org.manageevents.Event.avoidToUse;
