@@ -16,7 +16,7 @@ Feature: Casos de prueba la funcionalidad Suppliers
 #      And logout Page
 
 #  3
-  Scenario: Verificar que se genere el reporte “Suppliers” en un archivo csv al presionar el boton “EXPORT INTO CSV”
+  Scenario: Verificar que se realice la exportación CSV al presionar el botón "EXPORT INTO CSV"
     Given open menu 'Accounts' and click in sub menu'Suppliers'
     And click in button 'Export' on 'Suppliers'
 #      And logout Page
@@ -44,3 +44,20 @@ Feature: Casos de prueba la funcionalidad Suppliers
   Scenario: Verificar que se abra el formulario "Suppliers" al presionar el botón "ADD"
     Given open menu 'Accounts' and click in sub menu'Suppliers'
     And click in button 'ADD' on 'Suppliers'
+
+#  8
+  Scenario: Verificar que el botón "DELETE" muestre el mensaje de confirmación
+    Given open menu 'Accounts' and click in sub menu'Suppliers'
+    And click in button 'DELETE'
+
+#  9
+  Scenario: Verificar que el botón "Cancelar" del mensaje de confirmación, cancela la eliminación del "supplier" seleccionado
+    Given open menu 'Accounts' and click in sub menu'Suppliers'
+    And click in button 'DELETE'
+    And click in button 'Cancel' from confirmation message
+
+#  10
+  Scenario: Verificar que se muestren los mensajes de validación al presionar el botón "SUBMIT"
+    Given open menu 'Accounts' and click in sub menu'Suppliers'
+    And click in button 'ADD' on 'Suppliers'
+    And set data in 'Suppliers' form and click in button 'SUBMIT'

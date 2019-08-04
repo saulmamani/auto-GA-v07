@@ -9,20 +9,24 @@ import static testingui.diplomadoumss.org.manageevents.Event.*;
 public class SuppliersSearchForm extends BasePage {
 
     //TODO xpath real
-    @FindBy(xpath = "//input[@name='search' and @type='text']")
+    @FindBy(xpath = "//input[@name='phrase' and @type='text']")
     private WebElement searchTextField;
 
     //TODO xpath real
-    @FindBy(xpath = "//input[@name='select' and @type='list']")
+    @FindBy(xpath = "//select[@name='column']")
     private WebElement columnSelectField;
 
     //TODO xpath real
-    @FindBy(xpath="//button[@type='submit']")
+    @FindBy(xpath = "//option[@value='pt_accounts.ai_first_name' and @data-type='text']")
+    private WebElement itemColumnSelectField;
+
+    //TODO xpath real
+    @FindBy(xpath="//a[@class='xcrud-action btn btn-primary' and @data-search='1']")
     private WebElement goButton;
 
 
     public SuppliersSearchForm() {
-        avoidToUse(5);
+        avoidToUse(3);
     }
 
     public SuppliersSearchForm setSearchText(String searchText)
@@ -31,9 +35,15 @@ public class SuppliersSearchForm extends BasePage {
         return this;
     }
 
-    public SuppliersSearchForm setColumnSelect(String columnText)
+    public SuppliersSearchForm clickItemColumnSelect()
     {
-        fillWebElement(columnSelectField, columnText);
+        clickWebElement(itemColumnSelectField);
+        return this;
+    }
+
+    public SuppliersSearchForm clickColumSelect()
+    {
+        clickWebElement(columnSelectField);
         return this;
     }
 
@@ -44,8 +54,9 @@ public class SuppliersSearchForm extends BasePage {
     }
 
     public Suppliers setDataAndClick() {
-        return setSearchText("%").
-                setColumnSelect("Name").
+        return setSearchText("demo").
+                clickColumSelect().
+                clickItemColumnSelect().
                 clickGoButton();
     }
 }

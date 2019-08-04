@@ -65,4 +65,20 @@ public class SuppliersStepdefs {
     public void clickInButtonADDOnSuppliers() {
         suppliersForm = suppliers.clickButtonAdd();
     }
+
+
+    @And("^set data in 'Suppliers' form and click in button 'SUBMIT'$")
+    public void setDataInSuppliersFormAndClickInButtonSUBMIT() {
+        suppliersForm.validateForm();
+    }
+
+    @And("^click in button 'DELETE'$")
+    public void clickInButtonDELETE() {
+        suppliers.clickButtonDelete();
+    }
+
+    @And("^click in button 'Cancel' from confirmation message$")
+    public void clickInButtonCancelFromConfirmationMessage() {
+        suppliers.clickButtonCancelConfirmation();
+    }
 }
